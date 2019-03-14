@@ -4,6 +4,8 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
+ARG gemstash_url
+RUN bundle config mirror.https://rubygems.org $gemstash_url
 RUN bundle install
 COPY . /myapp
 
