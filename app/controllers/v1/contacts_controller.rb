@@ -1,5 +1,7 @@
 class V1::ContactsController < ApplicationController
   def index
+    byebug
+    
     @contacts = Contact.all
 
     render json: @contacts, status: :ok
